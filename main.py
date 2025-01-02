@@ -23,11 +23,12 @@ def run():
         'features': {
             'Hero': 'Innocent and golden heart prince',
             'Heroine': 'Smart and witty princess',
-            'Villain': 'No villain',
+            'Villain': 'Not specific',
             'theme': 'royal affairs and love story',
             'tone': 'Sweet, loving and caring relationship and language should be simple as story for children'
         },
-        'NumberOfCharacters': 'not specific'
+        'NumberOfCharacters': 'not specific',
+        'language': 'English'
     }
 
     StoryCreator().crew().kickoff(inputs=inputs)

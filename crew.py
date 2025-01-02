@@ -55,6 +55,15 @@ class StoryCreator():
 			verbose=True
 		)
 
+	@agent
+	def translator(self) -> Agent:
+		return Agent(
+			config=self.agents_config['translator'],
+			allow_delegation=False,
+			verbose=True
+		)
+
+
 
 	# To learn more about structured task outputs, 
 	# task dependencies, and task callbacks, check out the documentation:
@@ -85,6 +94,14 @@ class StoryCreator():
 			output_file='final_story.md'
 		)
 
+	@task
+	def story_translation_task(self) -> Task:
+		return Task(
+			config=self.tasks_config['story_translation_task'],
+			output_file='translated_story.md'
+		)
+
+
 
 	@crew
 	def crew(self) -> Crew:
@@ -98,12 +115,14 @@ class StoryCreator():
 				self.plot_heading_generator(),
 				self.story_generator(),
 				self.formatter(),
+				self.translator(),
 			],  # Automatically created by the @agent decorator
 			tasks=[
 				self.character_generation_task(),
 				self.plot_heading_generation_task(),
 				self.story_generation_task(),
 				self.story_formatting_task(),
+				self.story_translation_task()
 			],  # Automatically created by the @task decorator
 			process=Process.sequential,  # Executes tasks in a step-by-step sequence
 			verbose=True,

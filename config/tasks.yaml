@@ -33,3 +33,9 @@ story_formatting_task:
     A well-formatted story, ready for presentation, with paragraphs for descriptions and clearly separated dialogues in form of {style}.
   agent: formatter
 
+story_translation_task:
+  description: >
+    Translate the raw story content into the {language} while maintaining its essence, tone, and natural flow. Ensure cultural nuances are respected, and the narrative remains engaging and true to the original content.
+  expected_output: >
+    A smoothly translated story in {language}, retaining readability and capturing the original story's intent and emotions.
+  agent: translator
