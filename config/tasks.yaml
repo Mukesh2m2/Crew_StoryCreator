@@ -1,0 +1,35 @@
+character_generation_task:
+  description: >
+    Create detailed character profiles based on the given genre as {genre}, style as {style}, features of story are {features} which describes hero nature, relationships, and tone.
+    Ensure that each character has unique traits, a backstory, and defined relationships with other characters.
+  expected_output: >
+    A list of character profiles including their names, roles, traits, relationships, and any specific quirks or features.
+  agent: character_generator
+
+plot_heading_generation_task:
+  description: >
+    Generate a series of engaging plot headings using the character profiles and the specified genre which is {genre} and features are {features}.
+    Ensure that the plot events follow a logical progression and align with the tone showing traits of character but also keep on making story interesting. There should be some twists and moments that make you amaze.
+  expected_output: >
+    A list of plot headings, structured in chronological order to guide the story development.
+  agent: plot_heading_generator
+
+story_generation_task:
+  description: >
+    Expand each plot heading into a full section of narrative text.
+    Combine descriptive paragraphs to set the scene and character dialogues to drive the story.
+    Keep Character conversation more like script-style dialogue or dialogue-driven narration.
+    Ensure the tone and style match the specified genre which is {genre}, style as {style} and features are {features}.
+    Story should be detailed explaining plot points and giving creative twists and explaing. Uniqueness and detail explaination like instead of he provoked him give dialogues which show how he provoked.
+  expected_output: >
+    A fully written story with each plot heading expanded into a section, including descriptive paragraphs and conversational dialogues.
+  agent: story_generator
+
+story_formatting_task:
+  description: >
+    Format the raw story content into a polished and reader-friendly format and make narrative style as {style}.
+    Ensure descriptions are organized into paragraphs, dialogues are written in conversational style, and the overall flow is coherent and avoid disturbing headings at short interval. Keep Character conversation more like script-style dialogue or dialogue-driven narration.
+  expected_output: >
+    A well-formatted story, ready for presentation, with paragraphs for descriptions and clearly separated dialogues in form of {style}.
+  agent: formatter
+
